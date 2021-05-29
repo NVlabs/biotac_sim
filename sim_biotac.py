@@ -80,7 +80,7 @@ def main():
                       'cube_14mm', 'ring_7mm']
     asset_handles_indenters = load_assets(gym=gym,
                                           sim=sim,
-                                          base_dir=os.path.join('meshes', 'indenters'),
+                                          base_dir=os.path.join('urdf', 'indenters'),
                                           objects=indenter_names,
                                           options=asset_options)
 
