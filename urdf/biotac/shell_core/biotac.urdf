@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<robot name="biotac">
+	<link name="bc">
+		<visual>
+                        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+                        <geometry>
+				<mesh filename="../../meshes/bc/top_side_core_bc.obj"/>
+                        </geometry>
+                </visual>
+                <collision>
+                        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+                        <geometry>
+				<mesh filename="../../meshes/bc/top_side_core_bc.obj"/>
+                        </geometry>
+                </collision>
+                <inertial>
+                        <origin rpy="0.0 0.0 0.0" xyz="-5.76186e-3 -0.78412e-3 0.00005e-3"/>
+                        <mass value="0.00165412"/>
+                        <inertia ixx="0.01956e-6" iyy="0.08665e-6" izz="0.08404e-6" ixy="0.0021e-6" ixz="0.0" iyz="0.0"/>
+                </inertial>
+	</link>
+
+	<joint name="bc_to_biotac" type="fixed">
+		<parent link="bc"/>
+		<child link="biotac"/>
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	</joint>
+
+	<link name="biotac">
+		<fem>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<density value="1e3"/>
+			<youngs value="1476046.66"/>
+			<poissons value="0.318507192"/>
+			<damping value="0.0"/>
+			<attachDistance value="1.0e-5"/>
+			<tetmesh filename="../../meshes/int_ext_skin/int_ext_skin_combined_ftw.tet"/>
+		</fem>
+	</link>
+</robot>

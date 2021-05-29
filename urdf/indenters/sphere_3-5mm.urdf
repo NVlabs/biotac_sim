@@ -1,0 +1,33 @@
+<robot name="indenter">
+	<link name="world">
+        </link>
+
+        <joint name="world_to_indenter" type="prismatic">
+                <parent link="world"/>
+                <child link="indenter"/>
+                <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+                <axis xyz="0 1 0"/>
+                <dynamics damping="0.0" friction="0.0"/>
+                <limit lower="0.0" upper="0.1" velocity="1e9" effort="1e9"/>
+        </joint>
+
+	<link name="indenter">
+		<visual>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="../../meshes/indenters/sphere_3-5mm.obj"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+			<geometry>
+				<mesh filename="../../meshes/indenters/sphere_3-5mm.obj"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 -14.0636e-3 0.0"/>
+			<mass value="0.00075752"/>
+			<inertia ixx="2.03201e-8" iyy="1.24370e-8" izz="1.90589e-8" ixy="0.0" ixz="-1.96737e-15" iyz="0.0"/>
+		</inertial>
+	</link>
+</robot>
