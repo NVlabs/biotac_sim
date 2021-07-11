@@ -33,9 +33,9 @@ import os
 from scipy.spatial.transform import Rotation as R
 from shutil import copyfile
 
-from carbongym import gymapi
-from carbongym import gymtorch
-from carbongym import gymutil
+from isaacgym import gymapi
+from isaacgym import gymtorch
+from isaacgym import gymutil
 
 # Set target indenter pose
 INDENT_TARGET = [-0.015, 0.0425, 0.0,   # Position of tip
